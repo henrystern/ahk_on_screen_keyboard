@@ -2,7 +2,7 @@
 SendMode Input
 
 If (A_ScriptFullPath = A_LineFile) { ; if run as script rather than included elsewhere - for testing
-	Global keyboard := new OSK(Session.Keyboard.Theme, Session.Keyboard.Layout)
+	Global keyboard := new OSK("dark", "qwerty")
 
 	toggle := ObjBindMethod(keyboard, "toggle")
 	move_left := ObjBindMethod(keyboard, "changeIndex", "Left")
