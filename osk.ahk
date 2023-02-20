@@ -74,9 +74,11 @@ Class OSK
 
         this.Layout := []
         ; layout format is ["Text", width:=45, x-offset:=2]
+        ; "Text" is what is sent when the button is clicked.
+        ; ` and ~ had getkeystate issues so I replaced them with scancode sc029
         if (layout = "colemak-dh") {
             this.Layout.Push([ ["Esc"],["F1",,23],["F2"],["F3"],["F4"],["F5",,15],["F6"],["F7"],["F8"],["F9",,15],["F10"],["F11"],["F12"],["PrintScreen",60,10],["ScrollLock",60],["Pause",60] ])
-            this.Layout.Push([ ["U+223C", 30],["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["0"],["-"],["="],["BS", 60],["Ins",60,10],["Home",60],["PgUp",60] ])
+            this.Layout.Push([ ["sc029", 30],["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["0"],["-"],["="],["BS", 60],["Ins",60,10],["Home",60],["PgUp",60] ])
             this.Layout.Push([ ["Tab"],["q"],["w"],["f"],["p"],["b"],["j"],["l"],["u"],["y"],["`;"],["["],["]"],["\"],["Del",60,10],["End",60],["PgDn",60] ])
             this.Layout.Push([ ["CapsLock",60],["a"],["r"],["s"],["t"],["g"],["m"],["n"],["e"],["i"],["o"],["'"],["Enter",77] ])
             this.Layout.Push([ ["LShift",90],["x"],["c"],["d"],["v"],["z"],["k"],["h"],["`,"],["."],["/"],["RShift",94],["↑",60,72] ])
@@ -84,7 +86,7 @@ Class OSK
         }
         else { ; default qwerty
             this.Layout.Push([ ["Esc"],["F1",,23],["F2"],["F3"],["F4"],["F5",,15],["F6"],["F7"],["F8"],["F9",,15],["F10"],["F11"],["F12"],["PrintScreen",60,10],["ScrollLock",60],["Pause",60] ])
-            this.Layout.Push([ ["U+223C", 30],["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["0"],["-"],["="],["BS", 60],["Ins",60,10],["Home",60],["PgUp",60] ])
+            this.Layout.Push([ ["sc029", 30],["1"],["2"],["3"],["4"],["5"],["6"],["7"],["8"],["9"],["0"],["-"],["="],["BS", 60],["Ins",60,10],["Home",60],["PgUp",60] ])
             this.Layout.Push([ ["Tab"],["q"],["w"],["e"],["r"],["t"],["y"],["u"],["i"],["o"],["p"],["["],["]"],["\"],["Del",60,10],["End",60],["PgDn",60] ])
             this.Layout.Push([ ["CapsLock",60],["a"],["s"],["d"],["f"],["g"],["h"],["j"],["k"],["l"],["`;"],["'"],["Enter",77] ])
             this.Layout.Push([ ["LShift",90],["z"],["x"],["c"],["v"],["b"],["n"],["m"],["`,"],["."],["/"],["RShift",94],["Up",60,72] ])
@@ -93,7 +95,7 @@ Class OSK
 
         ; ; Optionally sets alternate text for the button actions named in this.Layout - doesn't have to be in same order as layout
         this.PrettyName := { "PrintScreen": "Prt Scr", "ScrollLock": "Scr Lk"
-                                , "U+223C": "~", 1: "1 !", 2: "2 @", 3: "3 #", 4: "4 $", 5: "5 `%", 6: "6 ^", 7: "7 &&", 8: "8 *", 9: "9 (", 0: "0 )", "-": "- _", "+": "= +", "BS": "←", "PgUp": "Pg Up", "PgDn": "Pg Dn"
+                                , "sc029": "~", 1: "1 !", 2: "2 @", 3: "3 #", 4: "4 $", 5: "5 `%", 6: "6 ^", 7: "7 &&", 8: "8 *", 9: "9 (", 0: "0 )", "-": "- _", "+": "= +", "BS": "←", "PgUp": "Pg Up", "PgDn": "Pg Dn"
                                 , "q": "Q", "w": "W", "e": "E", "r": "R", "t": "T", "y": "Y", "u": "U", "i": "I", "o": "O", "p": "P", "[": "[ {", "]": "] }", "\": "\ |"
                                 , "CapsLock": "Caps", "a": "A", "s": "S", "d": "D", "f": "F", "g": "G", "h": "H", "j": "J", "k": "K", "l": "L", "`;": "`; :", "'": "' """
                                 , "LShift": "Shift", "z": "Z", "x": "X", "c": "C", "v": "V", "b": "B", "n": "N", "m": "M", "`,": "`, <", ".": ". >", "/": "/ ?", "RShift": "Shift"
@@ -255,7 +257,7 @@ Class OSK
     }
 
     MonitorKey(Key) {
-        if (Key = "CapsLock" or Key = "ScrollLock")
+        if (Key = "CapsLock" or Key = "ScrollLock" or Key = "Pause")
             KeyOn := GetKeyState(Key, "T")
         else
             KeyOn := GetKeyState(Key)
