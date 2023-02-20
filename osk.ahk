@@ -91,13 +91,13 @@ Class OSK
 			this.Layout.Push([ ["LCtrl",60],["LWin",60],["LAlt",60],["Space",222],["RAlt",60],["RWin",60],["App",60],["RCtrl",60],["Left",60,10],["Down",60],["Right",60] ])
 		}
 
-		; Optionally sets alternate text for the button actions named in this.Layout - doesn't have to be in same order as layout
-		this.PrettyName := { "PrintScreen": "Prt Scr", "ScrollLock": "Scr Lk"
-								, 1: "1 !", 2: "2 @", 3: "3 #", 4: "4 $", 5: "5 %", 6: "6 ^", 7: "7 &&", 8: "8 *", 9: "9 (", 0: "0 )", "-": "- _", "=": "= +", "BS": "←", "PgUp": "Pg Up", "PgDn": "Pg Dn"
-								, "[": "[ {", "]": "] }", "\": "\ |"
-								, "CapsLock": "Caps", "`;": "`; :", "'": "' """
-								, "LShift": "Shift", ",": ", <", ".": ". >", "/": "/ ?", "RShift": "Shift"
-								, "LCtrl": "Ctrl", "LWin": "Win", "LAlt": "Alt", "Space": " ", "RAlt": "Alt", "RWin": "Win", "AppsKey": "App", "RCtrl": "Ctrl", "Up": "↑", "Down": "↓", "Left": "←", "Right": "→"}
+        ; Optionally sets alternate text for the button actions named in this.Layout - doesn't have to be in same order as layout
+        this.PrettyName := { "PrintScreen": "Prt Scr", "ScrollLock": "Scr Lk"
+                                , 1: "1 !", 2: "2 @", 3: "3 #", 4: "4 $", 5: "5 %", 6: "6 ^", 7: "7 &&", 8: "8 *", 9: "9 (", 0: "0 )", "-": "- _", "=": "= +", "BS": "←", "PgUp": "Pg Up", "PgDn": "Pg Dn"
+                                , "[": "[ {", "]": "] }", "\": "\ |"
+                                , "CapsLock": "Caps", "`;": "`; :", "'": "' """
+                                , "LShift": "Shift", ",": ", <", ".": ". >", "/": "/ ?", "RShift": "Shift"
+                                , "LCtrl": "Ctrl", "LWin": "Win", "LAlt": "Alt", "Space": " ", "RAlt": "Alt", "RWin": "Win", "AppsKey": "App", "RCtrl": "Ctrl", "Up": "↑", "Down": "↓", "Left": "←", "Right": "→"}
 
 		this.Make()
 	}
