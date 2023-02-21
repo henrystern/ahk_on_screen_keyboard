@@ -6,7 +6,7 @@ A modular and customizable on-screen-keyboard for AutoHotkey projects.
 
 ## Features:
   * Displays physical and virtual keypresses
-  * Can be controlled with dpad.
+  * Can be controlled with dpad
   * Includes light and dark mode
   * Easy to add or adjust layouts (in __New)
 
@@ -14,7 +14,7 @@ A modular and customizable on-screen-keyboard for AutoHotkey projects.
 
 To include in your script: `#Include osk.ahk`
 
-To initialize object: `Global keyboard := new OSK("dark", "qwerty")`.
+To initialize object: `Global keyboard := new OSK("dark", "qwerty")`
 
 Main methods:
 * `keyboard.toggle()` - Show and hide keyboard on the current monitor
