@@ -24,6 +24,13 @@ Main methods:
 
 If you want to use an object name other than `keyboard` you will have to change the calls in the `#If` statements and the `HandleOSKClick()` function to your object's name.
 
+## Testing:
+
+If you run the script directly (rather than including it elsewhere) the following hotkeys will be activated to allow testing the keyboard.
+* `Ctrl + Ins`: Toggle keyboard
+* `Up`, `Down`, `Left`, `Right`: Change DPad index
+* `Enter`: Send DPad selected
+
 ## Example
 
 For an example implementation see [Controller_MKB](https://github.com/henrystern/controller_mkb).
