@@ -23,8 +23,7 @@ If (A_ScriptFullPath = A_LineFile) { ; if run as script rather than included els
     Hotkey, Enter, % send_press
 
     SendKeyboardPress() {
-        Key := keyboard.Layout[keyboard.RowIndex, keyboard.ColumnIndex].1
-        keyboard.HandleOSKClick(Key)
+        keyboard.HandleOSKClick(keyboard.RetrieveDPadSelected())
         Return
     }
 }
@@ -408,6 +407,13 @@ Class OSK
 
     IsDPadKeyboard() {
         return this.RowIndex
+    }
+
+    RetrieveDPadSelected() {
+        if this.IsDPadKeyboard() {
+            return keyboard.Layout[keyboard.RowIndex, keyboard.ColumnIndex].1
+        }
+        return ""
     }
 
     UpdateGraphics(Obj, Colour){
