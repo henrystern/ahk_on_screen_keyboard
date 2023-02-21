@@ -11,6 +11,8 @@ If (A_ScriptFullPath = A_LineFile) { ; if run as script rather than included els
     move_right := ObjBindMethod(keyboard, "changeIndex", "Right")
     send_press := func("SendKeyboardPress").bind()
 
+    keyboard.Show()
+
     Hotkey, ^Ins, % toggle
 
     Hotkey, If, keyboard.Enabled
