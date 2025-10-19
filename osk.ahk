@@ -1,4 +1,5 @@
-﻿#SingleInstance
+﻿#Requires AutoHotkey v1
+#SingleInstance
 SendMode Input
 
 If (A_ScriptFullPath = A_LineFile) { ; if run as script rather than included elsewhere - for testing
@@ -83,7 +84,7 @@ Class OSK
             this.Layout.Push([ ["Tab"],["q"],["w"],["f"],["p"],["b"],["j"],["l"],["u"],["y"],["`;"],["["],["]"],["\"],["Del",60,10],["End",60],["PgDn",60] ])
             this.Layout.Push([ ["CapsLock",60],["a"],["r"],["s"],["t"],["g"],["m"],["n"],["e"],["i"],["o"],["'"],["Enter",77] ])
             this.Layout.Push([ ["LShift",90],["x"],["c"],["d"],["v"],["z"],["k"],["h"],["`,"],["."],["/"],["RShift",94],["↑",60,72] ])
-            this.Layout.Push([ ["LCtrl",60],["LWin",60],["LAlt",60],["Space",222],["RAlt",60],["RWin",60],["App",60],["RCtrl",60],["Left",60,10],["Down",60],["Right",60] ])
+            this.Layout.Push([ ["LCtrl",60],["LWin",60],["LAlt",60],["Space",222],["RAlt",60],["RWin",60],["AppsKey",60],["RCtrl",60],["Left",60,10],["Down",60],["Right",60] ])
         }
         else { ; default qwerty
             this.Layout.Push([ ["Esc"],["F1",,23],["F2"],["F3"],["F4"],["F5",,15],["F6"],["F7"],["F8"],["F9",,15],["F10"],["F11"],["F12"],["PrintScreen",60,10],["ScrollLock",60],["Pause",60] ])
@@ -91,7 +92,7 @@ Class OSK
             this.Layout.Push([ ["Tab"],["q"],["w"],["e"],["r"],["t"],["y"],["u"],["i"],["o"],["p"],["["],["]"],["\"],["Del",60,10],["End",60],["PgDn",60] ])
             this.Layout.Push([ ["CapsLock",60],["a"],["s"],["d"],["f"],["g"],["h"],["j"],["k"],["l"],["`;"],["'"],["Enter",77] ])
             this.Layout.Push([ ["LShift",90],["z"],["x"],["c"],["v"],["b"],["n"],["m"],["`,"],["."],["/"],["RShift",94],["Up",60,72] ])
-            this.Layout.Push([ ["LCtrl",60],["LWin",60],["LAlt",60],["Space",222],["RAlt",60],["RWin",60],["App",60],["RCtrl",60],["Left",60,10],["Down",60],["Right",60] ])
+            this.Layout.Push([ ["LCtrl",60],["LWin",60],["LAlt",60],["Space",222],["RAlt",60],["RWin",60],["AppsKey",60],["RCtrl",60],["Left",60,10],["Down",60],["Right",60] ])
         }
 
         ; ; Optionally sets alternate text for the button actions named in this.Layout - doesn't have to be in same order as layout
